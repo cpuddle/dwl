@@ -34,13 +34,13 @@ static const char cursor_size[] = "24";
 static int log_level = WLR_ERROR;
 /* Autostart */
 static const char *const autostart[] = {
-    "pipewire", NULL,
+    "nm-applet", NULL,
     "foot", "--server", NULL,
     "mako", NULL,
     "steam", "-silent", NULL,
-    "waybar", NULL,
     "thunar", "--daemon", NULL,
-    "dropbox", "start", NULL,
+    "nextcloud.kwallet", NULL,
+    "waybar", NULL,
     NULL /* terminate */
 }; 
 
@@ -164,6 +164,7 @@ static const char *filemanager[] = {"thunar", NULL};
 static const char *volumeup[] = {"/home/collin/.local/bin/volume_up", NULL};
 static const char *volumedown[] = {"/home/collin/.local/bin/volume_down", NULL};
 static const char *poweroff[] = {"/home/collin/.local/bin/power_menu", NULL};
+static const char *reloadwaybar[] = {"/home/collin/.local/bin/waybar_reload"};
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -173,6 +174,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_equal, spawn, {.v = volumeup}},
     {MODKEY, XKB_KEY_minus, spawn, {.v = volumedown}},
     {MODKEY, XKB_KEY_BackSpace, spawn, {.v = poweroff}},
+    {MODKEY, XKB_KEY_r, spawn, {.v = reloadwaybar}},
     {MODKEY, XKB_KEY_t, spawn, {.v = filemanager}},
     {MODKEY, XKB_KEY_b, spawn, {.v = browser}},
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
