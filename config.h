@@ -34,14 +34,14 @@ static const char cursor_size[] = "24";
 static int log_level = WLR_ERROR;
 /* Autostart */
 static const char *const autostart[] = {
-    "betterbird", NULL,
     "nm-applet", NULL,
     "foot", "--server", NULL,
     "mako", NULL,
     "steam", "-silent", NULL,
     "thunar", "--daemon", NULL,
-    "nextcloud.kwallet", NULL,
+    "nextcloud", NULL,
     "waybar", NULL,
+    "betterbird", NULL,
     NULL /* terminate */
 }; 
 

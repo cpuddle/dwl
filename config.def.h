@@ -34,14 +34,14 @@ static const char cursor_size[] = "24";
 static int log_level = WLR_ERROR;
 /* Autostart */
 static const char *const autostart[] = {
-    "betterbird", NULL,
     "nm-applet", NULL,
     "foot", "--server", NULL,
     "mako", NULL,
     "steam", "-silent", NULL,
     "thunar", "--daemon", NULL,
-    "nextcloud.kwallet", NULL,
+    "nextcloud", NULL,
     "waybar", NULL,
+    "betterbird", NULL,
     NULL /* terminate */
 }; 
 
@@ -166,6 +166,7 @@ static const char *volumeup[] = {"/home/collin/.local/bin/volume_up", NULL};
 static const char *volumedown[] = {"/home/collin/.local/bin/volume_down", NULL};
 static const char *poweroff[] = {"/home/collin/.local/bin/power_menu", NULL};
 static const char *reloadwaybar[] = {"/home/collin/.local/bin/waybar_reload"};
+static const char *screenshot[] = {"/home/collin/.local/bin/screenshot"};
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -193,6 +194,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XKB_KEY_p, setlayout, {0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_space, togglefloating, {0}},
+    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, {.v = screenshot}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
     {MODKEY, XKB_KEY_0, view, {.ui = ~0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_parenright, tag, {.ui = ~0}},
