@@ -166,6 +166,7 @@ static const char *volumeup[] = {"/home/collin/.local/bin/volume_up", NULL};
 static const char *volumedown[] = {"/home/collin/.local/bin/volume_down", NULL};
 static const char *poweroff[] = {"/home/collin/.local/bin/power_menu", NULL};
 static const char *reloadwaybar[] = {"/home/collin/.local/bin/waybar_reload"};
+static const char *screenshot[] = {"/home/collin/.local/bin/screenshot"};
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -178,6 +179,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_r, spawn, {.v = reloadwaybar}},
     {MODKEY, XKB_KEY_t, spawn, {.v = filemanager}},
     {MODKEY, XKB_KEY_b, spawn, {.v = browser}},
+    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, spawn, {.v = screenshot}},
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
     {MODKEY, XKB_KEY_i, incnmaster, {.i = +1}},
