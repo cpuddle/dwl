@@ -194,7 +194,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_m, setlayout, {.v = &layouts[2]}},
     {MODKEY, XKB_KEY_p, setlayout, {0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_space, togglefloating, {0}},
-    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, {.v = screenshot}},
+    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, spawn, {.v = screenshot}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
     {MODKEY, XKB_KEY_0, view, {.ui = ~0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_parenright, tag, {.ui = ~0}},
