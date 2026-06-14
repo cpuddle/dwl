@@ -37,9 +37,9 @@ static const char *const autostart[] = {
     "nm-applet", NULL,
     "foot", "--server", NULL,
     "mako", NULL,
-    "steam", "-silent", NULL,
-    "thunar", "--daemon", NULL,
-    "nextcloud", NULL,
+ //   "steam", "-silent", NULL,
+ //   "thunar", "--daemon", NULL,
+ //   "nextcloud", NULL,
     "waybar", NULL,
     "betterbird", NULL,
     NULL /* terminate */
