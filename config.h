@@ -38,7 +38,7 @@ static const char *const autostart[] = {
     "foot", "--server", NULL,
     "mako", NULL,
  //   "steam", "-silent", NULL,
- //   "thunar", "--daemon", NULL,
+    "thunar", "--daemon", NULL,
  //   "nextcloud", NULL,
     "waybar", NULL,
     "betterbird", NULL,
