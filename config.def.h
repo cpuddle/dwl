@@ -14,20 +14,15 @@ static int gaps = 1;
 static const unsigned int gappx = 5;
 /* gap pixel between windows */
 static const unsigned int borderpx = 2; /* border pixel of windows */
+
 static const float rootcolor[] = COLOR(0x282828ff);
 static const float bordercolor[] = COLOR(0x282828ff);
 static const float focuscolor[] = COLOR(0xb8bb26ff);
 static const float urgentcolor[] = COLOR(0xfb4934ff);
-/* This conforms to the xdg-protocol. Set the alpha to zero to restore the old
- * behavior */
 static const float fullscreen_bg[] = {0.0f, 0.0f, 0.0f, 1.0f};
 static const char *cursor_theme = "Capitaine Cursors (Gruvbox)";
 static const char cursor_size[] = "24";
-/* Make sure it's a valid integer, otherwise things will break */
 
-/* You can also use glsl colors */
-
-/* tagging - TAGCOUNT must be no greater than 31 */
 #define TAGCOUNT (9)
 
 /* logging */
@@ -37,9 +32,9 @@ static const char *const autostart[] = {
     "nm-applet", NULL,
     "foot", "--server", NULL,
     "mako", NULL,
-    "steam", "-silent", NULL,
+ //   "steam", "-silent", NULL,
     "thunar", "--daemon", NULL,
-    "nextcloud", NULL,
+ //   "nextcloud", NULL,
     "waybar", NULL,
     "betterbird", NULL,
     NULL /* terminate */
@@ -162,11 +157,13 @@ static const char *termcmd[] = {"footclient", NULL};
 static const char *menucmd[] = {"rofi", "-show", "drun", NULL};
 static const char *browser[] = {"firefox", NULL};
 static const char *filemanager[] = {"thunar", NULL};
-static const char *volumeup[] = {"/home/collin/.local/bin/volume_up", NULL};
-static const char *volumedown[] = {"/home/collin/.local/bin/volume_down", NULL};
-static const char *poweroff[] = {"/home/collin/.local/bin/power_menu", NULL};
-static const char *reloadwaybar[] = {"/home/collin/.local/bin/waybar_reload"};
-static const char *screenshot[] = {"/home/collin/.local/bin/screenshot"};
+static const char *volumeup[] = {"volume_up", NULL};
+static const char *volumedown[] = {"volume_down", NULL};
+static const char *ncmpcpp[] = {"ncmpcpp_launch", NULL};
+static const char *poweroff[] = {"power_menu", NULL};
+static const char *musicrestart[] = {"music_restart", NULL};
+static const char *waybarrestart[] = {"waybar_reload", NULL};
+static const char *screenshot[] = {"screenshot"};
 
 static const Key keys[] = {
     /* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */
@@ -176,10 +173,12 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_equal, spawn, {.v = volumeup}},
     {MODKEY, XKB_KEY_minus, spawn, {.v = volumedown}},
     {MODKEY, XKB_KEY_BackSpace, spawn, {.v = poweroff}},
-    {MODKEY, XKB_KEY_r, spawn, {.v = reloadwaybar}},
     {MODKEY, XKB_KEY_t, spawn, {.v = filemanager}},
     {MODKEY, XKB_KEY_b, spawn, {.v = browser}},
+    {MODKEY, XKB_KEY_m, spawn, {.v = ncmpcpp}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, spawn, {.v = screenshot}},
+    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_m, spawn, {.v = musicrestart}},
+    {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_r, spawn, {.v = waybarrestart}},
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
     {MODKEY, XKB_KEY_i, incnmaster, {.i = +1}},
@@ -192,7 +191,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_t, setlayout, {.v = &layouts[0]}},
     {MODKEY, XKB_KEY_e, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XKB_KEY_m, setlayout, {.v = &layouts[2]}},
+    {MODKEY, XKB_KEY_n, setlayout, {.v = &layouts[2]}},
     {MODKEY, XKB_KEY_p, setlayout, {0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_space, togglefloating, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},

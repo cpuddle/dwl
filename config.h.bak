@@ -164,8 +164,8 @@ static const char *browser[] = {"firefox", NULL};
 static const char *filemanager[] = {"thunar", NULL};
 static const char *volumeup[] = {"volume_up", NULL};
 static const char *volumedown[] = {"volume_down", NULL};
-static const char *poweroff[] = {"/home/collin/.local/bin/power_menu", NULL};
-static const char *reloadwaybar[] = {"/home/collin/.local/bin/waybar_reload"};
+static const char *ncmpcpp[] = {"ncmpcpp_launch", NULL};
+static const char *poweroff[] = {"power_menu", NULL};
 static const char *screenshot[] = {"/home/collin/.local/bin/screenshot"};
 
 static const Key keys[] = {
@@ -176,9 +176,9 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_equal, spawn, {.v = volumeup}},
     {MODKEY, XKB_KEY_minus, spawn, {.v = volumedown}},
     {MODKEY, XKB_KEY_BackSpace, spawn, {.v = poweroff}},
-    {MODKEY, XKB_KEY_r, spawn, {.v = reloadwaybar}},
     {MODKEY, XKB_KEY_t, spawn, {.v = filemanager}},
     {MODKEY, XKB_KEY_b, spawn, {.v = browser}},
+    {MODKEY, XKB_KEY_m, spawn, {.v = ncmpcpp}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_p, spawn, {.v = screenshot}},
     {MODKEY, XKB_KEY_j, focusstack, {.i = +1}},
     {MODKEY, XKB_KEY_k, focusstack, {.i = -1}},
@@ -192,7 +192,7 @@ static const Key keys[] = {
     {MODKEY, XKB_KEY_q, killclient, {0}},
     {MODKEY, XKB_KEY_t, setlayout, {.v = &layouts[0]}},
     {MODKEY, XKB_KEY_e, setlayout, {.v = &layouts[1]}},
-    {MODKEY, XKB_KEY_m, setlayout, {.v = &layouts[2]}},
+    {MODKEY, XKB_KEY_n, setlayout, {.v = &layouts[2]}},
     {MODKEY, XKB_KEY_p, setlayout, {0}},
     {MODKEY | WLR_MODIFIER_SHIFT, XKB_KEY_space, togglefloating, {0}},
     {MODKEY, XKB_KEY_f, togglefullscreen, {0}},
